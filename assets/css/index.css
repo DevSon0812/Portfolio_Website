@@ -166,12 +166,73 @@ header {
   color: #e9b949;
 }
 .header-icon > ion-icon {
+  display: flex;
   font-size: 28px;
   color: #e9b949;
 }
 
 .show-menu {
   left: 36%;
+}
+
+.box {
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  gap: 10px;
+}
+
+.slider {
+  background-color: #efd871;
+  bottom: 0;
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: 0.4s;
+}
+
+.slider:before {
+  background-color: #fff;
+  bottom: 4px;
+  content: "";
+  height: 20px;
+  left: 4px;
+  position: absolute;
+  transition: 0.4s;
+  width: 20px;
+}
+
+input:checked + .slider {
+  background-color: #102a42;
+}
+
+input:checked + .slider:before {
+  transform: translateX(22px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.theme-switch-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.theme-switch {
+  display: inline-block;
+  height: 28px;
+  position: relative;
+  width: 50px;
+}
+.theme-switch input {
+  display: none;
 }
 
 @media screen and (min-width: 992px) {

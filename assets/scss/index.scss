@@ -41,6 +41,9 @@ h5,
 h6 {
   overflow-wrap: break-word;
 }
+
+// * Variable
+
 $orangeFF: #fffaeb;
 $orange: #e9b949;
 $darkBlue: #102a42;
@@ -93,7 +96,7 @@ html {
   border-radius: 50%;
   width: 40px;
   height: 40px;
-  background-color: #e9b949;
+  background-color: $orange;
   position: fixed;
   bottom: 20px;
   right: 5px;
@@ -140,6 +143,7 @@ header {
 
   &-menu {
     display: flex;
+
     flex-direction: column;
     position: fixed;
     top: 10%;
@@ -168,6 +172,7 @@ header {
   }
 
   &-icon > ion-icon {
+    display: flex;
     font-size: 28px;
     color: $orange;
   }
@@ -176,6 +181,65 @@ header {
 .show-menu {
   left: 36%;
 }
+
+.box {
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  gap: 10px;
+}
+
+.slider {
+  background-color: $yellow;
+  bottom: 0;
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: 0.4s;
+}
+.slider:before {
+  background-color: #fff;
+  bottom: 4px;
+  content: "";
+  height: 20px;
+
+  left: 4px;
+  position: absolute;
+  transition: 0.4s;
+  width: 20px;
+}
+input:checked + .slider {
+  background-color: $darkBlue;
+}
+input:checked + .slider:before {
+  transform: translateX(22px);
+}
+.slider.round {
+  border-radius: 34px;
+}
+.slider.round:before {
+  border-radius: 50%;
+}
+.theme {
+  &-switch-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &-switch {
+    display: inline-block;
+    height: 28px;
+    position: relative;
+    width: 50px;
+  }
+  &-switch input {
+    display: none;
+  }
+}
+
+// * Dark mode
 
 @media screen and (min-width: 992px) {
   .header {

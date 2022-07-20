@@ -37,3 +37,5 @@ const scrollTop = () => {
 };
 
 btnTop.addEventListener("click", scrollTop);
+
+// * todo: handle Dark-mode
