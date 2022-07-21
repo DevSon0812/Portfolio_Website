@@ -4,6 +4,9 @@ const Menu = document.querySelector(".header-menu");
 const overlay = document.querySelector(".overlay");
 // * Const Scroll Top
 const btnTop = document.querySelector(".btn");
+const headerScroll = document.querySelector(".header");
+// * Const Active Nav
+const nav = document.querySelectorAll(".sec");
 
 // * to do : handle menu
 const showMenu = () => {
@@ -25,7 +28,7 @@ overlay.addEventListener("click", () => {
 
 // * handle ScrollTop
 window.addEventListener("scroll", () => {
-  if (window.pageYOffset > 800) {
+  if (window.pageYOffset > 700) {
     btnTop.classList.add("op1");
   } else {
     btnTop.classList.remove("op1");
@@ -38,4 +41,9 @@ const scrollTop = () => {
 
 btnTop.addEventListener("click", scrollTop);
 
-// * todo: handle Dark-mode
+// * todo: handle Active Nav
+nav.forEach((navItem) => {
+  navItem.addEventListener("click", () => {
+    hideMenu();
+  });
+});
